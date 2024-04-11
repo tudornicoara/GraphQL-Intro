@@ -8,5 +8,5 @@ public class Property
     public string? Street { get; set; }
     public decimal Value { get; set; }
     public string? Family { get; set; }
-    public ICollection<Payment> Payments { get; set; }
+    public ICollection<Payment>? Payments { get; set; }
 }

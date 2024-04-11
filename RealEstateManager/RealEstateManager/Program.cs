@@ -1,12 +1,18 @@
+using GraphQL;
 using Microsoft.EntityFrameworkCore;
 using RealEstateManager.Data;
+using RealEstateManager.Repositories;
+using RealEstateManager.Repositories.Contracts;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddTransient<IPropertyRepository, PropertyRepository>();
 builder.Services.AddDbContext<RealEstateContext>(options =>
     options.UseSqlite(builder.Configuration["ConnectionStrings:RealEstateDb"]));
+builder.Services.AddSingleton<IDocumentExecuter, DocumentExecuter>();
 
 var app = builder.Build();
 

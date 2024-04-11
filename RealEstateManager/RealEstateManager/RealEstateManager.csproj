@@ -7,6 +7,8 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="GraphQL" Version="7.8.0" />
+        <PackageReference Include="GraphQL.NewtonsoftJson" Version="7.8.0" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.4"/>
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.4" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.4">
@@ -18,7 +20,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers\" />
+      <ProjectReference Include="..\RealEstateManager.Utilities\RealEstateManager.Utilities.csproj" />
+      <ProjectReference Include="..\RealEstateManager.Utilities\RealEstateManager.Types.csproj" />
     </ItemGroup>
 
 </Project>
